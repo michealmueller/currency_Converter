@@ -29,7 +29,6 @@ $rates = $exchange -> getExchangeRates();
 
                             foreach($currencyLong as $value)
                             {
-                                echo $currencyLong[0];
                                 foreach($currencyAbb as $value2)
                                 {
                                     echo '<option value="' . $value2 .'">' . $value . '</option>/n';
