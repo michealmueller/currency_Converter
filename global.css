@@ -1,0 +1,22 @@
+/*CSS*/
+body {
+
+}
+
+a {
+
+}
+
+#disclaimer
+{
+    font-size: 12px;
+    text-emphasis: red;
+    text-align: center;
+}
+
+#results
+{
+    font-size: 18px;
+    text-align: center;
+    font-family: courier;
+}
