@@ -14,11 +14,11 @@ $rates = $exchange -> getExchangeRates();
     <link rel="stylesheet" href="global.css" type="text/css">
 </head>
 <body>
-    <form action="convert.php" method="post">
+    <form action="conversion.php" method="post">
         <table border="0">
             <tr>
                 <td><label for="amount">Amount:</label></td>
-                <td><input class="amount" type="text" name="amount" id="amount" value="1" /></td>
+                <td><input class="amount" type="text" name="amount" id="amount" value="5" /></td>
                 <td> <label for="from">From:</label></td>
                 <td>
                     <select name="from" id="from">

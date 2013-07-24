@@ -12,7 +12,7 @@ class getExchange
 {
     public $currencies;
     private $jsonUrl;
-    private $rates;
+    protected $rates;
 
     function getCurrencies()
     {
@@ -67,7 +67,7 @@ class getExchange
         // Execute
         $result=curl_exec($ch);
 
-        // Will dump a beauty json :3
+
         $this -> rates = json_decode($result,true);
 
         return $this -> rates;
