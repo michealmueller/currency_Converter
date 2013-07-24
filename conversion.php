@@ -9,13 +9,11 @@
 
 require_once 'exchanges.php';
 
-$calc = new rateConversion();
 $ex= new getExchange();
-
 $ex->getCurrencies();
 $ex->getExchangeRates();
 
-$amount = $calc->calcRates($_POST['amount'], $_POST['to'], $_POST['from']);
+$amount = $ex->calcRates($_POST['amount'], $_POST['to'], $_POST['from']);
 
 echo $amount;
 

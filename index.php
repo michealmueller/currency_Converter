@@ -18,7 +18,7 @@ $rates = $exchange -> getExchangeRates();
         <table border="0">
             <tr>
                 <td><label for="amount">Amount:</label></td>
-                <td><input class="amount" type="text" name="amount" id="amount" value="5" /></td>
+                <td><input type="text" name="amount" value="5" /></td>
                 <td> <label for="from">From:</label></td>
                 <td>
                     <select name="from" id="from">
@@ -50,15 +50,6 @@ $rates = $exchange -> getExchangeRates();
             </tr>
             <tr>
                 <td colspan="6"><input type="submit" value="Convert" /></td>
-            </tr>
-            <tr>
-                <td colspan="6">
-                    <div id="results">
-                        <?php
-                            print_r($rates['rates']['EUR']);
-                        ?>
-                    </div>
-                </td>
             </tr>
             <tr>
                 <td id="disclaimer" colspan="6"><?php echo $rates['disclaimer']; ?></td>

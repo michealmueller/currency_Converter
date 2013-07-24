@@ -6,13 +6,13 @@
  * Time: 10:16 PM
  * To change this template use File | Settings | File Templates.
  */
-require_once 'convert.php';
 
 class getExchange
 {
     public $currencies;
     private $jsonUrl;
     protected $rates;
+    protected $amount;
 
     function getCurrencies()
     {
@@ -71,6 +71,31 @@ class getExchange
         $this -> rates = json_decode($result,true);
 
         return $this -> rates;
+    }
+
+    function calcRates($amount, $to, $from)
+    {
+        if (empty($amount))
+        {
+            //redirect
+            echo 'STUPID!';
+            exit;
+        }
+
+        $fromCurrency = $from;
+        $toCurrency = $to;
+        $fromRate = $this -> rates['rates'][$fromCurrency];
+        $toRate = $this -> rates['rates'][$toCurrency];
+
+        /*print_r($fromRate);
+        echo '<br><br>';
+        print_r($toRate);*/
+
+        //equation for exchange is from * to = amount
+        $this -> amount = $amount * $toRate;
+        $this -> amount = round($this -> amount, 2, PHP_ROUND_HALF_UP);
+
+        return $this -> amount;
     }
 }
 
