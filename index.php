@@ -6,7 +6,6 @@ $exchange = new getExchange();
 $currencies = $exchange -> getCurrencies();
 $rates = $exchange -> getExchangeRates();
 
-//print_r($currencies[1]);
 ?>
 <!DOCTYPE html>
 <html>
@@ -27,11 +26,13 @@ $rates = $exchange -> getExchangeRates();
                             $currencyLong = $currencies[0];
                             $currencyAbb = $currencies[1][0];
 
-                            foreach($currencyLong as $value)
+                            foreach($currencyAbb as $value)
                             {
-                                foreach($currencyAbb as $value2)
+                                echo '<option value="' . $value .'">';
+
+                                foreach($currencyLong as $value2)
                                 {
-                                    echo '<option value="' . $value2 .'">' . $value . '</option>/n';
+                                    echo $value2 . '</option><br>';
                                 }
 
                             }
@@ -42,11 +43,13 @@ $rates = $exchange -> getExchangeRates();
                 <td>
                     <select name="to" id="to">
                         <?php
-                            foreach($currencies[0] as $value)
+                            foreach($currencyAbb as $value)
                             {
-                                foreach($currencies[1] as $value2)
+                                echo '<option value="' . $value .'">';
+
+                                foreach($currencyLong as $value2)
                                 {
-                                    echo '<option value="' . $value2 .'">' . $value . '</option>';
+                                    echo $value2 . '</option><br>';
                                 }
 
                             }
