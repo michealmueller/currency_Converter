@@ -93,7 +93,8 @@ class getExchange
 
         //equation for exchange is from * to = amount
         $this -> amount = $amount * $toRate;
-        $this -> amount = round($this -> amount, 2, PHP_ROUND_HALF_UP);
+        setlocale(LC_MONETARY, 'en_US');
+        $this -> amount = number_format($this -> amount,2);
 
         return $this -> amount;
     }
