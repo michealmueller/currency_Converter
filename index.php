@@ -26,16 +26,13 @@ $rates = $exchange -> getExchangeRates();
                             $currencyLong = $currencies[0];
                             $currencyAbb = $currencies[1][0];
 
-                            foreach($currencyAbb as $value)
-                            {
-                                echo '<option value="' . $value .'">';
+                        $currAbbCount = count($currencyAbb);
+                        $currencyLongCount = count($currencyLong);
 
-                                foreach($currencyLong as $value2)
-                                {
-                                    echo $value2 . '</option><br>';
-                                }
-
-                            }
+                        for($i=0; $i <= $currAbbCount; $i++)
+                        {
+                            echo '<option value="' . $currencyAbb[$i] .'">' . $currencyLong[$i] . '</option><br>';
+                        }
                         ?>
                     </select>
                 </td>
@@ -43,15 +40,9 @@ $rates = $exchange -> getExchangeRates();
                 <td>
                     <select name="to" id="to">
                         <?php
-                            foreach($currencyAbb as $value)
+                            for($o=0; $o <= $currAbbCount; $o++)
                             {
-                                echo '<option value="' . $value .'">';
-
-                                foreach($currencyLong as $value2)
-                                {
-                                    echo $value2 . '</option><br>';
-                                }
-
+                                echo '<option value="' . $currencyAbb[$o] .'">' . $currencyLong[$o] . '</option>\n';
                             }
                         ?>
                     </select>
