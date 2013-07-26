@@ -9,6 +9,22 @@
 
 
 ?>
+<script language="JavaScript">
+    <!--
+    function autoResize(id){
+        var newheight;
+        var newwidth;
+
+        if(document.getElementById){
+            newheight=document.getElementById(id).contentWindow.document .body.scrollHeight;
+            newwidth=document.getElementById(id).contentWindow.document .body.scrollWidth;
+        }
+
+        document.getElementById(id).height= (newheight) + "px";
+        document.getElementById(id).width= (newwidth) + "px";
+    }
+    //-->
+</script>
 
 <!DOCTYPE html>
 <html>
@@ -19,13 +35,11 @@
  </head>
  <body>
 <div id="nav">
-    <!-- Navigation -->
+    <iframe id="iframe2" seamless src="nav.html" onLoad="autoResize('iframe2');"></iframe>
 </div>
- <div id="iframe">
+ <div id="content">
      <!--Content-->
-     <iframe seamless src="convert.php">
-
-     </iframe>
+     <iframe id="iframe1" name="content"seamless  src="convert.php" onLoad="autoResize('iframe1');"></iframe>
  </div>
  </body>
 </html>

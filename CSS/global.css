@@ -14,13 +14,6 @@ a {
     text-align: center;
 }
 
-#results
-{
-    font-size: 18px;
-    text-align: center;
-    font-family: courier;
-}
-
 #conversion
 {
 
@@ -28,6 +21,8 @@ a {
 
 #nav
 {
-    width: 25%;
+    width: 200px;
     height: 100%;
+    border-right: 3px;
+    float:left;
 }

@@ -12,6 +12,27 @@ class getHistory
     protected $history;
     private $jsonUrl;
 
+    function cacheHistoricalData()
+    {
+        $months = array('01'=>'31', '02'=>'28', '03'=>'31', '04'=>'30', '05'=>'31', '06' =>'30', '07'=>'31', '08'=>'31', '09'=>'30', '10'=>'31', '11'=>'30', '12'=>'31');
+        $year = '2013';
+        foreach($months as $key => $value)
+        {
+            //$daysInMonth = $value;
+            for ($i=1; $i <= $value; $i++)
+            {
+                $length = strlen($i);
+                if ($length < 2)
+                {
+                    $i = '0' . $i;
+                }
+                $date = $year . '-' . $key . '-' . $i;
+
+                $data = self::getHistorical($date);
+                print_r($data['rates']);
+            }
+        }
+    }
     function getHistorical($historicalDate)
     {
         //specify date as YYYY-MM-DD when calling this function
