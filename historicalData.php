@@ -99,8 +99,11 @@ $currencies = $exchange -> getCurrencies();
             </form>
         </table>
         <?php
-            //$data = $history -> cacheHistoricalData();        //this is for full query of every symbol, not needed here will be needed later!!!!
-            $data = $history -> cacheSpecificHistoricalData();//$_POST['symbol'], $_POST['month'], $_POST['year']);
+           if($_POST['Show'] === "Show History")
+            {
+                $data = $history -> cacheSpecificHistoricalData($_POST['symbol'], $_POST['month'], $_POST['year']);
+            }
+
 
         ?>
         <script type="text/javascript">
@@ -119,14 +122,14 @@ $currencies = $exchange -> getCurrencies();
 
                 var plot1 = $.jqplot("chart1", [currYear], {
                     seriesColors: ["rgba(78, 135, 194, 0.7)", "rgb(211, 235, 59)"],
-                    title: '<?php echo $_POST['symbol'].'-'.$_POST['year']; ?>',
+                    title: '<?php echo $_POST['symbol'].'-'.$_POST['month'].'-'.$_POST['year']; ?>',
                     highlighter: {
                         show: true,
                         sizeAdjust: 3,
                         tooltipOffset: 9
                     },
                     grid: {
-                        background: 'rgba(80,80,80,0.0)',
+                        background: 'rgba(50,50,50,0.0)',
                         drawBorder: true,
                         shadow: false,
                         gridLineColor: '#666666',
@@ -165,7 +168,7 @@ $currencies = $exchange -> getCurrencies();
                             tickOptions: {
                                 formatString: "%b %e",
                                 angle: -45,
-                                textColor: '#dddddd'
+                                textColor: '#000'
                             },
                             min: <?php echo '"'.$_POST['year'].'-'.$_POST['month'].'-1"' ?>,
                             max: <?php echo '"'.$_POST['year'].'-'.$_POST['month'].'-30"' ?>,
@@ -176,12 +179,12 @@ $currencies = $exchange -> getCurrencies();
                             renderer: $.jqplot.LogAxisRenderer,
                             pad: 0,
                             rendererOptions: {
-                                minorTicks:6
+                                //minorTicks:12
                             },
                             tickOptions: {
                                 formatString: "%6f",
                                 showMark: false,
-                                textColor: '#dddddd'
+                                textColor: '#000'
                             }
                         }
                     }
