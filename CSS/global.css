@@ -10,7 +10,6 @@ a {
 #disclaimer
 {
     font-size: 12px;
-    text-emphasis: red;
     text-align: center;
 }
 
@@ -25,4 +24,21 @@ a {
     height: 100%;
     border-right: 3px;
     float:left;
+}
+
+#chart1
+{
+    width: 800px;
+    background-color: graytext;
+    color: #ffffff;
+}
+
+#historyView
+{
+
+}
+
+#symbolSelect
+{
+
 }
