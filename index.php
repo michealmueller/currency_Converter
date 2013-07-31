@@ -34,12 +34,14 @@
   <link rel="stylesheet" href="CSS/global.css" type="text/css">
  </head>
  <body>
-<div id="nav">
-    <iframe id="iframe2" seamless src="nav.html" onLoad="autoResize('iframe2');"></iframe>
-</div>
- <div id="content">
-     <!--Content-->
-     <iframe id="iframe1" name="content"seamless  src="convert.php" onLoad="autoResize('iframe1');"></iframe>
+ <div id="container">
+    <div id="nav">
+        <iframe id="iframe2" seamless src="nav.html" onLoad="autoResize('iframe2');"></iframe>
+    </div>
+    <div id="content">
+         <!--Content-->
+         <iframe id="iframe1" name="content"seamless  src="convert.php" onLoad="autoResize('iframe1');"></iframe>
+    </div>
  </div>
  </body>
 </html>

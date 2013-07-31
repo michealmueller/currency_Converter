@@ -70,13 +70,6 @@ class getHistory
 
         return $this -> history;
     }
-    function formatGraphData()
-    {
-        $splitDate = preg_split('|-|', $this -> formattedDate);
-
-        $this -> graphData = '["'.$splitDate[0].'-'.$splitDate[1].'-'.$splitDate[2].'",'. $rate .']';
-        //echo $this ->graphData;
-    }
 
     function cacheAllHistoricalData($month)
     {
