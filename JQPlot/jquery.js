@@ -3685,7 +3685,7 @@ jQuery.fn.extend({
 	}
 });
 /*!
- * Sizzle CSS Selector Engine
+ * Sizzle css Selector Engine
  * Copyright 2012 jQuery Foundation and other contributors
  * Released under the MIT license
  * http://sizzlejs.com/
@@ -3751,8 +3751,8 @@ var i,
 	// http://www.w3.org/TR/css3-syntax/#characters
 	characterEncoding = "(?:\\\\.|[\\w-]|[^\\x00-\\xa0])+",
 
-	// Loosely modeled on CSS identifier characters
-	// An unquoted value should be a CSS identifier http://www.w3.org/TR/css3-selectors/#attribute-selectors
+	// Loosely modeled on css identifier characters
+	// An unquoted value should be a css identifier http://www.w3.org/TR/css3-selectors/#attribute-selectors
 	// Proper syntax: http://www.w3.org/TR/CSS21/syndata.html#value-def-identifier
 	identifier = characterEncoding.replace( "w", "w#" ),
 
@@ -3806,7 +3806,7 @@ var i,
 	rescape = /'|\\/g,
 	rattributeQuotes = /\=[\x20\t\r\n\f]*([^'"\]]*)[\x20\t\r\n\f]*\]/g,
 
-	// CSS escapes http://www.w3.org/TR/CSS21/syndata.html#escaped-characters
+	// css escapes http://www.w3.org/TR/CSS21/syndata.html#escaped-characters
 	runescape = /\\([\da-fA-F]{1,6}[\x20\t\r\n\f]?|.)/g,
 	funescape = function( _, escaped ) {
 		var high = "0x" + escaped - 0x10000;
@@ -6619,7 +6619,7 @@ var iframe, getStyles, curCSS,
 	ropacity = /opacity\s*=\s*([^)]*)/,
 	rposition = /^(top|right|bottom|left)$/,
 	// swappable if display is none or starts with table except "table", "table-cell", or "table-caption"
-	// see here for display values: https://developer.mozilla.org/en-US/docs/CSS/display
+	// see here for display values: https://developer.mozilla.org/en-US/docs/css/display
 	rdisplayswap = /^(none|table(?!-c[ea]).+)/,
 	rmargin = /^margin/,
 	rnumsplit = new RegExp( "^(" + core_pnum + ")(.*)$", "i" ),
@@ -6831,7 +6831,7 @@ jQuery.extend({
 				return;
 			}
 
-			// If a number was passed in, add 'px' to the (except for certain CSS properties)
+			// If a number was passed in, add 'px' to the (except for certain css properties)
 			if ( type === "number" && !jQuery.cssNumber[ origName ] ) {
 				value += "px";
 			}
@@ -6897,7 +6897,7 @@ jQuery.extend({
 		return val;
 	},
 
-	// A method for quickly swapping in/out CSS properties to get correct calculations
+	// A method for quickly swapping in/out css properties to get correct calculations
 	swap: function( elem, options, callback, args ) {
 		var ret, name,
 			old = {};

@@ -1,0 +1,33 @@
+/*CSS*/
+body {
+
+}
+
+a {
+
+}
+
+#disclaimer
+{
+    font-size: 12px;
+    text-align: center;
+}
+
+#conversion
+{
+
+}
+
+#nav
+{
+    width: 200px;
+    height: 100%;
+    width: auto;
+    float:left;
+    border: medium none;
+}
+
+#chart1
+{
+    width: 800px;
+}

@@ -31,17 +31,14 @@
  <head>
   <meta charset="UTF-8">
   <title>title</title>
-  <link rel="stylesheet" href="CSS/global.css" type="text/css">
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+     <link rel="stylesheet" href="css/global.css" type="text/css">
  </head>
  <body>
- <div id="container">
-    <div id="nav">
-        <iframe id="iframe2" seamless src="nav.html" onLoad="autoResize('iframe2');"></iframe>
-    </div>
-    <div id="content">
-         <!--Content-->
-         <iframe id="iframe1" name="content"seamless  src="convert.php" onLoad="autoResize('iframe1');"></iframe>
-    </div>
+ <div class="container">
+    <div class="page-header"><h3>Currency Converter and Currency Plots By: Micheal Mueller</h3></div>
+    <iframe id="iframe2" class="pull-left" src="nav.html" seamless onLoad="autoResize('iframe2');"></iframe>
+    <iframe id="iframe1" class="pull-left" name="content" seamless src="convert.php" onLoad="autoResize('iframe1');"></iframe>
  </div>
  </body>
 </html>

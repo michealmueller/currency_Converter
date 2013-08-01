@@ -881,11 +881,11 @@
         this.placement = "insideGrid";
         // prop: xoffset
         // DEPRECATED.  Set the margins on the legend using the marginTop, marginLeft, etc. 
-        // properties or via CSS margin styling of the .jqplot-table-legend class.
+        // properties or via css margin styling of the .jqplot-table-legend class.
         this.xoffset = 0;
         // prop: yoffset
         // DEPRECATED.  Set the margins on the legend using the marginTop, marginLeft, etc. 
-        // properties or via CSS margin styling of the .jqplot-table-legend class.
+        // properties or via css margin styling of the .jqplot-table-legend class.
         this.yoffset = 0;
         // prop: border
         // css spec for the border around the legend box.
@@ -917,23 +917,23 @@
         // Used with series specific legend renderers for pie, donut, mekko charts, etc.
         this.preDraw = false;
         // prop: marginTop
-        // CSS margin for the legend DOM element. This will set an element 
-        // CSS style for the margin which will override any style sheet setting.
+        // css margin for the legend DOM element. This will set an element
+        // css style for the margin which will override any style sheet setting.
         // The default will be taken from the stylesheet.
         this.marginTop = null;
         // prop: marginRight
-        // CSS margin for the legend DOM element. This will set an element 
-        // CSS style for the margin which will override any style sheet setting.
+        // css margin for the legend DOM element. This will set an element
+        // css style for the margin which will override any style sheet setting.
         // The default will be taken from the stylesheet.
         this.marginRight = null;
         // prop: marginBottom
-        // CSS margin for the legend DOM element. This will set an element 
-        // CSS style for the margin which will override any style sheet setting.
+        // css margin for the legend DOM element. This will set an element
+        // css style for the margin which will override any style sheet setting.
         // The default will be taken from the stylesheet.
         this.marginBottom = null;
         // prop: marginLeft
-        // CSS margin for the legend DOM element. This will set an element 
-        // CSS style for the margin which will override any style sheet setting.
+        // css margin for the legend DOM element. This will set an element
+        // css style for the margin which will override any style sheet setting.
         // The default will be taken from the stylesheet.
         this.marginLeft = null;
         // prop: escapeHtml
@@ -1246,7 +1246,7 @@
         // May not be implemented in all renderers.
         this.fill = false;
         // prop: fillColor
-        // CSS color spec to use for fill under line.  Defaults to line color.
+        // css color spec to use for fill under line.  Defaults to line color.
         this.fillColor;
         // prop: fillAlpha
         // Alpha transparency to apply to the fill under the line.
@@ -1856,7 +1856,7 @@
         // to highest, back to front.
         this.seriesStack = [];
         // prop: seriesColors
-        // Ann array of CSS color specifications that will be applied, in order,
+        // Ann array of css color specifications that will be applied, in order,
         // to the series in the plot.  Colors will wrap around so, if their
         // are more series than colors, colors will be reused starting at the
         // beginning.  For pie charts, this specifies the colors of the slices.
@@ -6085,7 +6085,7 @@
         // width of the baseline in pixels.
         this.baselineWidth = null;
         // prop: baselineColor
-        // CSS color spec for the baseline.
+        // css color spec for the baseline.
         this.baselineColor = null;
         // prop: forceTickAt0
         // This will ensure that there is always a tick mark at 0.

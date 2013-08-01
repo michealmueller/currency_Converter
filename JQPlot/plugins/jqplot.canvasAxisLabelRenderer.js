@@ -61,15 +61,15 @@
         // label for the axis.
         this.label = '';
         // prop: fontFamily
-        // CSS spec for the font-family css attribute.
+        // css spec for the font-family css attribute.
         // Applies only to browsers supporting native font rendering in the
         // canvas tag.  Currently Mozilla 3.5 and Safari 4.
         this.fontFamily = '"Trebuchet MS", Arial, Helvetica, sans-serif';
         // prop: fontSize
-        // CSS spec for font size.
+        // css spec for font size.
         this.fontSize = '11pt';
         // prop: fontWeight
-        // CSS spec for fontWeight:  normal, bold, bolder, lighter or a number 100 - 900
+        // css spec for fontWeight:  normal, bold, bolder, lighter or a number 100 - 900
         this.fontWeight = 'normal';
         // prop: fontStretch
         // Multiplier to condense or expand font width.  

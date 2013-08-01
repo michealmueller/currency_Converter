@@ -174,7 +174,7 @@
         // width of the baseline in pixels.
         this.baselineWidth = null;
         // prop: baselineColor
-        // CSS color spec for the baseline.
+        // css color spec for the baseline.
         this.baselineColor = null;
         this.daTickInterval = null;
         this._daTickInterval = null;

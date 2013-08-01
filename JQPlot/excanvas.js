@@ -102,7 +102,7 @@ if (!document.createElement('canvas').getContext) {
     addNamespace(doc, 'g_vml_', 'urn:schemas-microsoft-com:vml');
     addNamespace(doc, 'g_o_', 'urn:schemas-microsoft-com:office:office');
 
-    // Setup default CSS.  Only add one style sheet per document
+    // Setup default css.  Only add one style sheet per document
     if (!doc.styleSheets['ex_canvas_']) {
       var ss = doc.createStyleSheet();
       ss.owningElement.id = 'ex_canvas_';

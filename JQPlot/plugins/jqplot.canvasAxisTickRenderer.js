@@ -93,10 +93,10 @@
         // css spec for the font-family css attribute.
         this.fontFamily = '"Trebuchet MS", Arial, Helvetica, sans-serif';
         // prop: fontSize
-        // CSS spec for font size.
+        // css spec for font size.
         this.fontSize = '10pt';
         // prop: fontWeight
-        // CSS spec for fontWeight
+        // css spec for fontWeight
         this.fontWeight = 'normal';
         // prop: fontStretch
         // Multiplier to condense or expand font width.  
