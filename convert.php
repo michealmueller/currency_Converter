@@ -15,9 +15,9 @@ $rates = $exchange -> getExchangeRates();
     <link rel="stylesheet" href="css/global.css" type="text/css">
 </head>
 <body>
-<div class="container">
+<div id="customContainer" class="container">
     <table class="table table-hover">
-        <form action="" method="post" class="form-inline">
+        <form action="convert.php" method="post" class="form-inline">
             <tr>
                 <td><label for="amount">Amount:</label></td>
                 <td><input class="form-control" placeholder="Amount" id="focusedInput" type="number" name="amount" value="5" width="50px"/></td>
@@ -53,25 +53,31 @@ $rates = $exchange -> getExchangeRates();
                             ?>
                     </select>
                 </td>
-                <tr>
-                    <td colspan="2" align="center"><input class="btn btn-primary" type="submit" value="Convert" /></td>
-                </tr>
-
-    <?php
-
-    if($_POST['submit'] == 'Convert')
-    {
-        $exchange->getCurrencies();
-        $exchange->getExchangeRates();
-
-        $amount = $exchange->calcRates($_POST['amount'], $_POST['to'], $_POST['from']);
-
-        echo '<lable>'.$amount.'</lable>';
-    }
-
-
-    ?>
+            </tr>
+            <tr>
+                <td colspan="2" >
+                    <input class="form-control btn btn-primary" type="submit" value="Convert" />
+                </td>
+            </tr>
         </form>
+            <tr>
+                <td>
+                    <?php
+
+                    if($_POST['submit'] == 'Convert')
+                    {
+                        $exchange->getCurrencies();
+                        $exchange->getExchangeRates();
+
+                        $amount = $exchange->calcRates($_POST['amount'], $_POST['to'], $_POST['from']);
+
+                        echo '<lable>'.$amount.'</lable>';
+                    }
+
+
+                    ?>
+                </td>
+            </tr>
     </table>
 </div>
 </body>

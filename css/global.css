@@ -28,4 +28,16 @@ a {
 #chart1
 {
     width: 800px;
+    margin: 0 auto;
+}
+
+#convert
+{
+    width:400px;
+}
+
+#customContainer
+{
+    width:800px;
+    margin:0 auto;
 }

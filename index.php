@@ -11,37 +11,108 @@ require_once 'exchanges.php';
 $exchange = new getExchange();
 $rates = $exchange -> getExchangeRates();
 ?>
-<script language="JavaScript">
-    <!--
-    function autoResize(id){
-        var newheight;
-        var newwidth;
-
-        if(document.getElementById){
-            newheight=document.getElementById(id).contentWindow.document .body.scrollHeight;
-            newwidth=document.getElementById(id).contentWindow.document .body.scrollWidth;
-        }
-
-        document.getElementById(id).height= (newheight) + "px";
-        document.getElementById(id).width= (newwidth) + "px";
-    }
-    //-->
-</script>
-
 <!DOCTYPE html>
 <html>
  <head>
   <meta charset="UTF-8">
-  <title>title</title>
+  <title>Currency Converter and Plotting</title>
     <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
      <link rel="stylesheet" href="css/global.css" type="text/css">
  </head>
  <body>
- <div id="customContainer" class="container">
-    <div class="page-header"><h3>Currency Converter and Currency Plots By: Micheal Mueller</h3><br><h6>Made Possible By: <a href="openexchangerates.org">OpenExchangeRates.org</a>, <a href="http://getbootstrap.com/">Twitter Bootstrap</a>, and <a href="http://www.jqplot.com/">JQPlot</a></h6></div>
-    <iframe id="iframe2" class="pull-left" src="nav.html" seamless onLoad="autoResize('iframe2');"></iframe>
-    <iframe id="iframe1" class="pull-left" name="content" seamless src="convert.php" onLoad="autoResize('iframe1');"></iframe>
+ <div class="container">
+    <div  class="page-header">
+        <h3>Currency Converter and Currency Plots By: Micheal Mueller</h3><br><h6>Made Possible By: <a href="openexchangerates.org">OpenExchangeRates.org</a>, <a href="http://getbootstrap.com/">Twitter Bootstrap</a>, and <a href="http://www.jqplot.com/">JQPlot</a></h6>
+    </div>
+     <div id="customContainer">
+        <div id="nav" class="pull-left">
+            <table >
+                <tr>
+                    <td>
+                        <ul>
+                            <li><a href="#">Currency Converter</a></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li><a href="historicalData.php">Currency Rate History</a></li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </div>
+         <div id="convert" class="pull-left">
+             <?php
+             $currencies = $exchange -> getCurrencies();
+             ?>
+             <table class="table table-hover">
+                     <form action="convert.php" method="post" class="form-inline">
+                         <tr>
+                             <td><label for="amount">Amount:</label></td>
+                             <td><input class="form-control" placeholder="Amount" id="focusedInput" type="number" name="amount" value="5" width="50px"/></td>
+                         </tr>
+                         <tr>
+                             <td><label for="from">From:</label></td>
+                             <td>
+                                 <select name="from" id="from">
+                                     <option value="USD" selected>USD - United States Dollar</option>
+                                     <?php
+                                     $currencyLong = $currencies[0];
+                                     $currencyAbb = $currencies[1][0];
+
+                                     $currAbbCount = count($currencyAbb);
+                                     $currencyLongCount = count($currencyLong);
+
+                                     for($i=0; $i <= $currAbbCount; $i++)
+                                     {
+                                         echo '<option value="' . $currencyAbb[$i] .'">' . $currencyLong[$i] . '</option><br>';
+                                     }
+                                     ?>
+                                 </select>
+                             </td>
+                         </tr>
+                         <td><label for="to">To:</label></td>
+                         <td>
+                             <select name="to" id="to">
+                                 <?php
+                                 for($o=0; $o <= $currAbbCount; $o++)
+                                 {
+                                     echo '<option value="' . $currencyAbb[$o] .'">' . $currencyLong[$o] . '</option>';
+                                 }
+                                 ?>
+                             </select>
+                         </td>
+                         </tr>
+                         <tr>
+                             <td colspan="2" >
+                                 <input class="form-control btn btn-primary" type="submit" value="Convert" />
+                             </td>
+                         </tr>
+                     </form>
+                     <tr>
+                         <td>
+                             <?php
+
+                             if($_POST['submit'] == 'Convert')
+                             {
+                                 $exchange->getCurrencies();
+                                 $exchange->getExchangeRates();
+
+                                 $amount = $exchange->calcRates($_POST['amount'], $_POST['to'], $_POST['from']);
+
+                                 echo '<lable>'.$amount.'</lable>';
+                             }
+
+
+                             ?>
+                         </td>
+                     </tr>
+                 </table>
+            </div>
+         </div>
  </div>
- <div id="disclaimer"><?php echo $rates['disclaimer']; ?></div>
+ <div id="disclaimer" class="container"><?php echo $rates['disclaimer']; ?></div>
  </body>
 </html>
