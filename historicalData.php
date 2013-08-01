@@ -39,7 +39,7 @@ $currencies = $exchange -> getCurrencies();
 <div id="container">
     <div id="symbolSelect">
         <table align="center">
-            <form action="historicalData.php" method="POST">
+            <form action="historicalData.php" method="POST" class="form-inline">
                 <tr>
                     <td>
                         <label>1. Select a month and year:</label>
@@ -94,7 +94,7 @@ $currencies = $exchange -> getCurrencies();
                         <label>3. Click</label>
                     </td>
                     <td>
-                        <input type="submit" value="Show History" name="Show">
+                        <input class="btn btn-primary" type="submit" value="Show History" name="Show">
                     </td>
                 </tr>
             </form>

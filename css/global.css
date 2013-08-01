@@ -22,9 +22,7 @@ a {
 {
     width: 200px;
     height: 100%;
-    width: auto;
-    float:left;
-    border: medium none;
+    border-right: 1px solid #eeeeee;
 }
 
 #chart1
